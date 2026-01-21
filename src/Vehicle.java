@@ -1,4 +1,4 @@
-public class Vehicle {
+abstract public class Vehicle {
     String name;
     String vehicleType;
 
