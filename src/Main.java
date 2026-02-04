@@ -1,3 +1,6 @@
+import jdk.jshell.execution.Util;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
@@ -8,8 +11,12 @@ public class Main {
     public static void main(String[] args) {
 
 
+        FileUtils.WriteTextFile("morjens","greeting.txt");
+        System.out.println(FileUtils.readTextFile("greeting.txt"));
 
 
+        System.exit(0);
+        //int myInt = Utils.getIntInput("Mata in ett heltal");
         while(true) {
 
             Random random = new Random();
