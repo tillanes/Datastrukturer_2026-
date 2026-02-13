@@ -1,6 +1,8 @@
 import jdk.jshell.execution.Util;
 
 import java.io.File;
+import java.lang.reflect.Array;
+import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
@@ -11,21 +13,46 @@ public class Main {
     public static void main(String[] args) {
         String [] testData = {"Walter","Jesse","Skyler","Hank","Marie","Saul","Gus","Mike","Walter","Lydia","Todd","Tuco","Hector","Steve","Jane","Skinny","Badger","Andrea","Brock","Gale","Ted","Tyrus","Victor","Combo","Emilio","Domingo","Eladio","Juan","Leonel","Marco","Carmen","Gretchen","Elliott","Bogdan","Huell","Patrick","Joe","Francesca","Ed","Declan"};
 
-        Person p1 = new Person(testData[0]);
-        Person p2 = new Person(testData[1], p1);
-        Person p3 = new Person(testData[0], p2);
-        Person p4 = new Person(testData[1], p3);
-
-        Person pMid = new Person("Midperson", p2);
-        p3.next = pMid;
+        String[] weekDays = {"må", "ti", "ons", "to", "fre", "lö", "sö"};
 
 
+        int today = 5;
 
-        Person current = p4;
-        while(current != null){
-            System.out.println(current.getName());
-            current = current.next;
-        }
+        System.out.println(weekDays[today]);
+
+        int future = 14;
+
+        int futureDay = (future+today) % 7;
+
+        System.out.println("Idag är det "+weekDays[today] +" om "+ future+ " dagar är det: "+ weekDays[futureDay]);
+
+
+
+
+        System.exit(0);
+        Stacky stacky = new Stacky(5);
+        stacky.push(testData[30]);
+        stacky.push(testData[32]);
+        stacky.push(testData[12]);
+        stacky.push(testData[15]);
+        stacky.push(testData[0]);
+        System.out.println(stacky);
+        stacky.pop();
+        stacky.pop();
+        System.out.println(stacky);
+
+
+        Linky linky = new Linky();
+        linky.add(new Person(testData[0]));
+        linky.add(new Person(testData[1]));
+        linky.add(new Person(testData[3]));
+        linky.add(new Person(testData[4]));
+
+        System.out.println(linky.toString());
+        System.out.println(linky.size());
+        System.exit(0);
+
+
 
 
         System.exit(0);
