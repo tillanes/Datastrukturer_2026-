@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String [] testData = {"Walter","Jesse","Skyler","Hank","Marie","Saul","Gus","Mike","Walter","Lydia","Todd","Tuco","Hector","Steve","Jane","Skinny","Badger","Andrea","Brock","Gale","Ted","Tyrus","Victor","Combo","Emilio","Domingo","Eladio","Juan","Leonel","Marco","Carmen","Gretchen","Elliott","Bogdan","Huell","Patrick","Joe","Francesca","Ed","Declan"};
 
+        /*
         String[] weekDays = {"må", "ti", "ons", "to", "fre", "lö", "sö"};
 
 
@@ -27,9 +27,10 @@ public class Main {
         System.out.println("Idag är det "+weekDays[today] +" om "+ future+ " dagar är det: "+ weekDays[futureDay]);
 
 
+        */
+        String [] testData = {"Walter","Jesse","Skyler","Hank","Marie","Saul","Gus","Mike","Walter","Lydia","Todd","Tuco","Hector","Steve","Jane","Skinny","Badger","Andrea","Brock","Gale","Ted","Tyrus","Victor","Combo","Emilio","Domingo","Eladio","Juan","Leonel","Marco","Carmen","Gretchen","Elliott","Bogdan","Huell","Patrick","Joe","Francesca","Ed","Declan"};
 
 
-        System.exit(0);
         Stacky stacky = new Stacky(5);
         stacky.push(testData[30]);
         stacky.push(testData[32]);
@@ -50,10 +51,16 @@ public class Main {
 
         System.out.println(linky.toString());
         System.out.println(linky.size());
-        System.exit(0);
 
+        Queuey q = new Queuey();
+        q.enequeqe("Samuel");
+        q.enequeqe("Mikale");
+        q.enequeqe("Viktor");
+        q.enequeqe("Ismo");
 
-
+        System.out.println(q);
+        q.dequeue();
+        System.out.println(q);
 
         System.exit(0);
         StringArray names = new StringArray(testData);

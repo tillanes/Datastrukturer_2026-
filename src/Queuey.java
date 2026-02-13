@@ -1,0 +1,44 @@
+public class Queuey {
+    Node front, rear;
+
+
+
+    private class Node {
+        String value;
+        Node next;
+
+        Node(String value) {
+            this.value = value;
+        }
+    }
+
+    public void enequeqe(String value) {
+        Node n = new Node(value);
+        if(front ==null) {
+            front = n;
+        } else{
+            rear.next = n;
+        }
+        rear = n;
+    }
+
+    public String dequeue(){
+        String ret;
+        ret = front.value;
+        front = front.next;
+        return ret;
+    }
+
+    @Override
+    public String toString() {
+        Node current = front;
+        String ret = "Queuey: [ ";
+        while(current != null){
+            ret += " " + current.value;
+            current = current.next;
+        }
+        ret += " ]";
+        return ret;
+
+    }
+}
